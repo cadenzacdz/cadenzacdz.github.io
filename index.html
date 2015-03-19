@@ -13,8 +13,545 @@
     <link href="common/css/part.css" rel="stylesheet" type="text/css">
     <link href="css/local.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/animated.css">
-    <link rel="icon" href="common/images/favicon.ico">
+    <link rel="icon" href="common/images/favicon.ico">.
 </head>
+<style>
+            /* ==========================================================================
+Contain     :
+    Reset CSS that resets browser's consisting CSS setting as default.
+    CSSs that construct page layout like page background, header, footer, global navigation and so on.
+    
+Contents    :
+    1: Reset Section
+    2: Wrap Section
+    3: Header Section
+    4: Main Section
+    5: Footer Section
+    
+========================================================================== */
+/*
+    Reset Section
+-------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0;
+    -webkit-text-size-adjust: auto;
+    -moz-text-size-adjust: auto;
+    -ms-text-size-adjust: auto;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1.5;
+    font-family: "Segoe UI";
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+a {
+    vertical-align: baseline;
+    text-decoration: none;
+    color: #000;
+}
+
+/*
+    Wrap Section
+------------------------*/
+#wrap{
+    width: 100%;
+}
+#wrapInner{
+    width: 100%;
+}
+/*
+    Header Section
+------------------------*/
+#headerArea{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+.square{
+    min-height: 30px;
+    background-color:#79b5e6; 
+}
+.logo{
+    max-width: 150px;
+    width: auto;
+    position: relative;
+    left: 44%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/*
+    navArea Section
+-------------------------------------*/
+.navArea{
+    width: 100%;
+    min-height: 50px;
+    background-color: #79b5e6;
+}
+nav {
+    height: 40px;
+    width: 100%;
+    font-size: 12pt;
+    position: relative;
+}
+nav ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 1120px;
+    height: 40px;
+}
+nav li {
+    display: inline;
+    float: left;
+}
+nav a {
+    color: #fff;
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 40px;
+    padding: 5px 10px;
+}
+nav a:hover{
+    color: #000;
+}
+nav li a {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+nav li:last-child a {
+    border-right: 0;
+}
+nav a#pull {
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    nav { 
+        height: auto;
+    }
+    nav ul {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+    nav li {
+        width: 50%;
+        float: left;
+        position: relative;
+    }
+    nav a {
+        text-align: left;
+        width: 100%;
+    }
+    .slider>img{
+        width: 100%;
+    }
+    .text>p{
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+}
+}
+@media only screen and (max-width : 480px) {
+    nav {
+        border-bottom: 0;
+    }
+    nav ul {
+        display: none;
+        height: auto;
+    }
+    nav a#pull {
+        display: block;
+        background-color: #79b5e6;
+        width: auto;
+        /*position: relative;*/
+    }
+    .slider>img{
+        width: 100%;
+    }
+    .text>p{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+}
+@media only screen and (max-width : 320px) {
+    nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+    .slider>img{
+        width: 100%;
+    }
+    .text>p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+}
+/*
+    mainArea Section
+-----------------------*/
+#mainArea{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+.container-slider{
+    max-width: 829px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+/*
+    profile section
+----------------------*/
+.container-profile{
+    width: 100%;
+    overflow: auto;
+    background-color: #79B5E6;
+}
+.profile{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+.profile>h1{
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: #FFF;
+}
+.profile>h2{
+    font-size: 26px;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    color: #FFF;
+}
+.profile>p{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    color: #FFF;
+}
+/*
+    skills section
+-------------------------*/
+.container-skills{
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 120px;
+}
+.skills{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+.skills>h1{
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 50px;
+    padding-bottom: 30px;   
+}
+.skills>h2{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 20px;   
+}
+.skills>p{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 30px;   
+}
+.blockskills{
+    width: 100%;
+    overflow: auto;
+}
+.skill1,.skill2,.skill3{
+    float: left;
+    max-width: 350px;
+    width: 100%;
+    padding: 20px 20px;
+    margin: 10px;
+    background-color:#79B5E6; 
+    border: 3px #e8e8e8 solid;
+}
+.skill2,.skill3{
+    padding: 40px 20px;
+}
+.skill1>img,.skill2>img,.skill3>img{
+    position: relative;
+    left: 70px;
+    padding-bottom: 20px;
+}
+.skill1>h2,.skill2>h2,.skill3>h2{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    color: #FFF;
+}
+.skill2>h2,.skill3>h2{
+    margin-top: -13px;
+}
+.skill1>p,.skill2>p,.skill3>p{
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    color: #FFF;
+}
+/*
+    portofolio
+--------------------------*/
+.container-portofolio{
+    width: 100%;
+    overflow: auto;
+    background-color: #79B5E6;
+    color: #fff;
+}
+.portofolio{
+    max-width: 1280px;
+    width: 100%;
+    overflow: auto;
+    margin: 0 auto;
+}
+.portofolio>h2{
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 50px;
+    padding-bottom: 30px;   
+}
+.contentleft{
+    float: left;
+    max-width: 500px;
+    width: 100%;
+}
+.contentleft>h3{
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.contentleft>p{
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+.contentright{
+    float: right;
+    max-width: 650px;
+    width: 100%;
+    min-height: 380px;
+}
+/*
+    Chart Section
+---------------------------------*/
+.chart {
+  list-style: none;
+  margin: 0 auto;
+  padding: 25px;
+  max-width: 466px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.chart h1 {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  font-size: 10pt;
+  font-style: italic;
+  font-weight: lighter;
+  border-bottom: 1px dotted #e1e1e1;
+}
+.chart .line {
+  height: 30px;
+  padding: 5px 15px;
+  line-height: 25px;
+  color: #fff;
+  text-align: center;
+}
+.chart .line:after {
+  position: absolute;
+  width: 32px;
+  content: attr(data-percent);
+  top: 0px;
+  right: -52px;
+  color: #000;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 7.5px 10px;
+  text-align: Center;
+}
+.chart .line:before {
+  position: absolute;
+  width: auto;
+  content: attr(data-browser);
+  top: 5px;
+  left: 0;
+  color: #000;
+  padding: 2.5px 10px;
+  text-align: Center;
+}
+.chart .line.HTML5 {
+  background: #3cd3bf;
+  border-color: #117964;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.chart .line.Java {
+  background: #3cd3bf;
+  border-color: #208e4e;
+  max-width: 250px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.chart .line.Illustrator {
+  background: #3cd3bf;
+  border-color: #1d6fa5;
+  max-width: 300px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.chart .line.PHP {
+  background: #3cd3bf;
+  border-color: #713b87;
+  max-width: 250px;
+  width: 100%;
+}
+.chart .line.Photoshop {
+  background: #3cd3bf;
+  border-color: #b06f09;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.line:nth-child(1) {
+  animation-delay: 0.25s;
+}
+.line:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.line:nth-child(3) {
+  animation-delay: 0.75s;
+}
+.line:nth-child(4) {
+  animation-delay: 1s;
+}
+.line:nth-child(5) {
+  animation-delay: 1.25s;
+}
+.line:nth-child(6) {
+  animation-delay: 1.5s;
+}
+/*
+    contact section
+--------------------------*/
+.containercontactBlockA01 {
+    width: 100%;
+    overflow: auto;
+}
+.containercontactBlockA01 .contactBlockA01 {
+    max-width: 1150px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top:80px;
+}
+.containercontactBlockA01 .contactBlockA01 h1,
+.containercontactBlockA01 .contactBlockA01 h2 {
+    text-align: center;
+    font-size: 24px;
+}
+.containercontactBlockA01 .contactBlockA01 form{
+    display: block;
+    padding-top: 30px;
+}
+.containercontactBlockA01 .contactBlockA01 form .lefttableBlockA01{
+    float: left;
+}
+.containercontactBlockA01 .contactBlockA01 form .lefttableBlockA01 input{
+    width: 470px;
+    height: 34px;
+    margin: 10px;
+    padding-left: 5px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px #f4f4f4 solid;
+}
+.containercontactBlockA01 .contactBlockA01 form .righttableBlockA01{
+    float: right;
+}
+.containercontactBlockA01 .contactBlockA01 form .righttableBlockA01 textarea{
+    max-width: 606px;
+    max-height: 155px;
+    width: 606px;
+    height: 155px;
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px #f4f4f4 solid;
+}
+.containercontactBlockA01 .contactBlockA01 form .righttableBlockA01 a{
+    text-align: center;
+    background-color: #79B5E6;
+    color: #FFF;
+    padding: 5px 30px 5px 30px;
+}
+iframe{
+    max-width: 1920px;
+    width: 100%;
+    padding-top: 50px;
+}
+.logo>img{
+    width: 100%;
+}
+.text{
+    padding-top: 150px;
+    padding-bottom: 160px;
+}
+.text>p{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+}
+</style>
 <body>
     <!--#wrap-->
     <div id="wrap">
@@ -143,7 +680,7 @@
                             </tr>
                         </table>
                     </form>
-                    
+
                 <!--/.contactBlockA01-->   
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.208367124238!2d106.8459589!3d-6.236242999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f395ed189193%3A0xfd0f5e5b130ff639!2sJl.+Tebet+Barat+Dalam+II+C+No.10%2C+Tebet%2C+Kota+Jakarta+Selatan%2C+Daerah+Khusus+Ibukota+Jak+12810!5e0!3m2!1sen!2sid!4v1426739897095" width="100%" height="450" frameborder="0" style="border:0"></iframe>
